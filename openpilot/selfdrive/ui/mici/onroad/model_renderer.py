@@ -20,9 +20,9 @@ MIN_DRAW_DISTANCE = 10.0
 MAX_DRAW_DISTANCE = 100.0
 
 THROTTLE_COLORS = [
-  rl.Color(13, 248, 122, 102),   # HSLF(148/360, 0.94, 0.51, 0.4)
-  rl.Color(114, 255, 92, 89),    # HSLF(112/360, 1.0, 0.68, 0.35)
-  rl.Color(114, 255, 92, 0),     # HSLF(112/360, 1.0, 0.68, 0.0)
+  rl.Color(0, 140, 255, 102),   # Tesla blue path (custom fork)
+  rl.Color(0, 110, 255, 89),
+  rl.Color(0, 90, 255, 0),
 ]
 
 NO_THROTTLE_COLORS = [
@@ -34,7 +34,7 @@ NO_THROTTLE_COLORS = [
 LANE_LINE_COLORS = {
   UIStatus.DISENGAGED: rl.Color(200, 200, 200, 255),
   UIStatus.OVERRIDE: rl.Color(255, 255, 255, 255),
-  UIStatus.ENGAGED: rl.Color(0, 255, 64, 255),
+  UIStatus.ENGAGED: rl.Color(0, 128, 255, 255),  # Tesla blue
   **LANE_LINE_COLORS_SP,
 }
 

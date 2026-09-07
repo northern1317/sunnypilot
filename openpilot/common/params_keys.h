@@ -8,7 +8,7 @@
 inline static std::unordered_map<std::string, ParamKeyAttributes> keys = {
     {"AccessToken", {CLEAR_ON_MANAGER_START | DONT_LOG, STRING}},
     {"AdbEnabled", {PERSISTENT | BACKUP, BOOL}},
-    {"AlwaysOnDM", {PERSISTENT | BACKUP, BOOL}},
+    {"AlwaysOnDM", {PERSISTENT | BACKUP, BOOL, "1"}},
     {"ApiCache_Device", {PERSISTENT, STRING}},
     {"ApiCache_FirehoseStats", {PERSISTENT, JSON}},
     {"AssistNowToken", {PERSISTENT, STRING}},
@@ -185,7 +185,7 @@ inline static std::unordered_map<std::string, ParamKeyAttributes> keys = {
     {"QuickBootToggle", {PERSISTENT | BACKUP, BOOL, "0"}},
     {"QuietMode", {PERSISTENT | BACKUP, BOOL, "0"}},
     {"RainbowMode", {PERSISTENT | BACKUP, BOOL, "0"}},
-    {"RoadEdgeLaneChangeEnabled", {PERSISTENT | BACKUP, BOOL, "0"}},
+    {"RoadEdgeLaneChangeEnabled", {PERSISTENT | BACKUP, BOOL, "1"}},
     {"RocketFuel", {PERSISTENT | BACKUP, BOOL, "0"}},
     {"ScreenSaverEnabled", {PERSISTENT | BACKUP, BOOL, "1"}},
     {"ScreenSaverTimeout", {PERSISTENT | BACKUP, INT, "300"}},
@@ -214,7 +214,7 @@ inline static std::unordered_map<std::string, ParamKeyAttributes> keys = {
     {"ModelManager_ModelsCache_Chestnut", {PERSISTENT | BACKUP, JSON}},
 
     // Neural Network Lateral Control
-    {"NeuralNetworkLateralControl", {PERSISTENT | BACKUP, BOOL, "0"}},
+    {"NeuralNetworkLateralControl", {PERSISTENT | BACKUP, BOOL, "1"}},
 
     // sunnylink params
     {"EnableSunnylinkUploader", {PERSISTENT | BACKUP, BOOL}},
@@ -240,16 +240,16 @@ inline static std::unordered_map<std::string, ParamKeyAttributes> keys = {
     {"ToyotaEnforceStockLongitudinal", {PERSISTENT | BACKUP, BOOL, "0"}},
     {"ToyotaStopAndGoHack", {PERSISTENT | BACKUP, BOOL, "0"}},
 
-    {"DynamicExperimentalControl", {PERSISTENT | BACKUP, BOOL, "0"}},
-    {"BlindSpot", {PERSISTENT | BACKUP, BOOL, "0"}},
+    {"DynamicExperimentalControl", {PERSISTENT | BACKUP, BOOL, "1"}},
+    {"BlindSpot", {PERSISTENT | BACKUP, BOOL, "1"}},
 
     // sunnypilot model params
     {"CameraOffset", {PERSISTENT | BACKUP, FLOAT, "0.0"}},
     {"LagdToggle", {PERSISTENT | BACKUP, BOOL, "1"}},
     {"LagdToggleDelay", {PERSISTENT | BACKUP, FLOAT, "0.2"}},
     {"LagdValueCache", {PERSISTENT, FLOAT, "0.2"}},
-    {"LaneTurnDesire", {PERSISTENT | BACKUP, BOOL, "0"}},
-    {"LaneTurnValue", {PERSISTENT | BACKUP, FLOAT, "19.0"}},
+    {"LaneTurnDesire", {PERSISTENT | BACKUP, BOOL, "1"}},
+    {"LaneTurnValue", {PERSISTENT | BACKUP, FLOAT, "20.0"}},
     {"PlanplusControl", {PERSISTENT | BACKUP, FLOAT, "1.0"}},
 
     // mapd

@@ -16,7 +16,7 @@ DEBUG = False
 LOOKING_CENTER_THRESHOLD_UPPER = math.radians(6)
 LOOKING_CENTER_THRESHOLD_LOWER = math.radians(3)
 
-CONE_COLOR_GREEN = (0, 255, 64)
+CONE_COLOR_ACTIVE = (0, 128, 255)  # Tesla blue
 CONE_COLOR_ORANGE = (255, 115, 0)
 
 
@@ -47,7 +47,7 @@ class DriverStateRenderer(Widget):
     self._awareness_unfull = False
 
     self._fade_filter = FirstOrderFilter(0.0, 0.05, 1 / gui_app.target_fps)
-    self._color_fade_filter = FirstOrderFilter(1.0, 0.05, 1 / gui_app.target_fps) # 1.0 = full green, 0.0 = full orange
+    self._color_fade_filter = FirstOrderFilter(1.0, 0.05, 1 / gui_app.target_fps) # 1.0 = full blue, 0.0 = full orange
     self._pitch_filter = FirstOrderFilter(0.0, 0.05, 1 / gui_app.target_fps, initialized=False)
     self._yaw_filter = FirstOrderFilter(0.0, 0.05, 1 / gui_app.target_fps, initialized=False)
     self._rotation_filter = FirstOrderFilter(0.0, 0.1, 1 / gui_app.target_fps, initialized=False)
@@ -116,9 +116,9 @@ class DriverStateRenderer(Widget):
       )
 
       if not self._lines:
-        r = int(round(CONE_COLOR_GREEN[0] * green_amount + CONE_COLOR_ORANGE[0] * (1 - green_amount)))
-        g = int(round(CONE_COLOR_GREEN[1] * green_amount + CONE_COLOR_ORANGE[1] * (1 - green_amount)))
-        b = int(round(CONE_COLOR_GREEN[2] * green_amount + CONE_COLOR_ORANGE[2] * (1 - green_amount)))
+        r = int(round(CONE_COLOR_ACTIVE[0] * green_amount + CONE_COLOR_ORANGE[0] * (1 - green_amount)))
+        g = int(round(CONE_COLOR_ACTIVE[1] * green_amount + CONE_COLOR_ORANGE[1] * (1 - green_amount)))
+        b = int(round(CONE_COLOR_ACTIVE[2] * green_amount + CONE_COLOR_ORANGE[2] * (1 - green_amount)))
         rl.draw_texture_pro(
           self._dm_cone,
           source_rect,
@@ -153,7 +153,7 @@ class DriverStateRenderer(Widget):
     start_y = center_y + (line_offset + line_length) * math.sin(math.radians(angle))
     end_x = start_x + line_length * math.cos(math.radians(angle))
     end_y = start_y + line_length * math.sin(math.radians(angle))
-    color = rl.Color(0, 255, 64, 255)
+    color = rl.Color(0, 128, 255, 255)  # Tesla blue
 
     if grey:
       color = rl.Color(166, 166, 166, 255)
