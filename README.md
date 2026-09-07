@@ -10,7 +10,7 @@ This fork is based on sunnypilot `staging` (https://github.com/sunnypilot/sunnyp
 Changes made in this fork:
 
 - **Toyota C-HR 2017-20 (TSS-P) steering tune** (`opendbc_repo/opendbc/car/torque_data/params.toml`): lowered `latAccelFactor` (1.9 → 1.5) for a stronger torque response per lateral-acceleration error, and raised `friction` (0.26 → 0.35) for stronger low-speed friction compensation, so the car holds the lane more firmly, uses the full ±1.0 torque range when needed, and turns in harder on sharp corners — while staying within stock EPS and panda safety limits (steer command remains capped at ±1500 counts).
-- **Lane Turn Desire on by default** (`openpilot/common/params_keys.h`): low-speed turn assist (`LaneTurnDesire`) is enabled out of the box.
+- **Autonomy defaults enabled out of the box** (`openpilot/common/params_keys.h`): `LaneTurnDesire` with maximum `LaneTurnValue`, `NeuralNetworkLateralControl` (a trained NN model for `TOYOTA_CHR` ships with sunnypilot), `AlwaysOnDM`, `BlindSpot`, `RoadEdgeLaneChangeEnabled` and `DynamicExperimentalControl`. Features the vehicle does not support (e.g. openpilot longitudinal / experimental mode) are ignored automatically.
 - **Alerts always at maximum volume** (`openpilot/selfdrive/ui/soundd.py`): engage/disengage and warning sounds always play at 100% volume regardless of cabin noise.
 
 > ⚠️ This fork does not modify any panda safety code. All changes operate within comma.ai's safety limits. Use at your own risk.
