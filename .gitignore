@@ -9,6 +9,8 @@ venv/
 .idea
 .overlay_init
 .overlay_consistent
+# created by manager.py after first source build (quickboot marker); must not block the initial source build
+/prebuilt
 .sconsign.dblite
 a.out
 .hypothesis
