@@ -13,6 +13,7 @@ Changes made in this fork:
 - **Autonomy defaults enabled out of the box** (`openpilot/common/params_keys.h`): `LaneTurnDesire` with maximum `LaneTurnValue`, `NeuralNetworkLateralControl` (a trained NN model for `TOYOTA_CHR` ships with sunnypilot), `AlwaysOnDM`, `BlindSpot`, `RoadEdgeLaneChangeEnabled` and `DynamicExperimentalControl`. Features the vehicle does not support (e.g. openpilot longitudinal / experimental mode) are ignored automatically.
 - **Alerts always at maximum volume** (`openpilot/selfdrive/ui/soundd.py`): engage/disengage and warning sounds always play at 100% volume regardless of cabin noise.
 - **Russian UI language** (`openpilot/selfdrive/ui/translations/app_ru.po`): complete Russian translation of the interface, based on the English catalog.
+- **Tesla-style color scheme** (`openpilot/selfdrive/ui/mici/onroad/`, `openpilot/selfdrive/ui/onroad/`): engaged lane lines, planned path and driver-monitoring indicator are Tesla blue instead of stock green.
 
 > ⚠️ This fork does not modify any panda safety code. All changes operate within comma.ai's safety limits. Use at your own risk.
 
