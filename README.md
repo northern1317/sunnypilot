@@ -3,6 +3,18 @@
 ## 🌞 What is sunnypilot?
 [sunnypilot](https://github.com/sunnyhaibin/sunnypilot) is a fork of comma.ai's openpilot, an open source driver assistance system. sunnypilot offers the user a unique driving experience for over 300+ supported car makes and models with modified behaviors of driving assist engagements. sunnypilot complies with comma.ai's safety rules as accurately as possible.
 
+## 🍀 Fork modifications — future/toyotaCHR_2017
+
+This fork is based on sunnypilot `staging` (https://github.com/sunnypilot/sunnypilot/tree/staging).
+
+Changes made in this fork:
+
+- **Toyota C-HR 2017-20 (TSS-P) steering tune** (`opendbc_repo/opendbc/car/torque_data/params.toml`): increased `latAccelFactor`, `friction` and `MAX_LAT_ACCEL_MEASURED` for `TOYOTA_CHR` so the car holds the lane more firmly and turns in harder on sharp corners, while still respecting the stock EPS torque limits (steer command remains capped at ±1.0 normalized / ±1500 counts).
+- **Lane Turn Desire on by default** (`openpilot/common/params_keys.h`): low-speed turn assist (`LaneTurnDesire`) is enabled out of the box.
+- **Alerts always at maximum volume** (`openpilot/selfdrive/ui/soundd.py`): engage/disengage and warning sounds always play at 100% volume regardless of cabin noise.
+
+> ⚠️ This fork does not modify any panda safety code. All changes operate within comma.ai's safety limits. Use at your own risk.
+
 ## 💭 Join our Community Forum
 Join the official sunnypilot community forum to stay up to date with all the latest features and be a part of shaping the future of sunnypilot!
 * https://community.sunnypilot.ai/
